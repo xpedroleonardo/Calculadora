@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Fira Code, sans-serif;
+    font-weight: normal;
+}
+
+html {
+    --bg-calc: #011627; 
+    --white: #FAFAFA;
+    --del: #bd1f36;
+    --c:  #c71f37;
+    --equal: #2ec4b6 ;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+    background: var(--bg-calc);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.calculator > button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--white);
+
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.calculator > button:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.view {
+    grid-column: 1 / -1;
+    background-color: var(--white);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.view .previous-operand {
+    color: rgba(0, 0, 0, .75);
+    font-size: 1.5rem;
+}
+
+.view .current-operand {
+    color: black;
+    font-size: 2.5rem;
+}
+
+.action-button {
+    color: white  !important;
+}
+
+#del{
+    background: var(--del) !important;
+}
+
+#c{
+    background: var(--c) !important;
+}
+
+#equal{
+    background: var(--equal) !important;
+}
